@@ -17,7 +17,7 @@ export class AuthService {
 
   # ...
 
-   public signIn(email: string, password: string): Observable<Argon2BrowserHashResult>
+   public generateHash(email: string, password: string): Observable<Argon2BrowserHashResult>
    {
       let argon2Options: Argon2BrowserHashOptions = {
          pass: password,
