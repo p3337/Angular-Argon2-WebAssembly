@@ -4,7 +4,7 @@
 
 ## Usage
 
-```
+```typescript
 
 import { Argon2Service } from './argon2.service';
 import { Argon2BrowserHashOptions, Argon2BrowserHashResult } from './argon2-types';
@@ -38,6 +38,14 @@ Prerequisites:
 - CMake
 
 Run:
-```
+```bash
+# Update emscripten
+git pull
+./emsdk install latest
+./emsdk activate latest
+# And source emscripten environment variables in the current terminal
+source ./emsdk_env.sh
+
+# build argon2 wasm
 bash build.sh
 ```

@@ -38,9 +38,8 @@ emcmake cmake \
     ../
 emmake make -j9
 
+sed -i 's/var calledRun;/&Module["free"]=_free;Module["malloc"]=_malloc;Module["argon2Verify"]=_argon2_verify;Module["argon2Hash"]=_argon2_hash;Module["argon2ErrorMessage"]=_argon2_error_message;/' ./generated/argon2.js
 
-sed -i 's/noExitRuntime=true;/&Module["free"]=_free;Module["malloc"]=_malloc;Module["argon2Verify"]=_argon2_verify;Module["argon2Hash"]=_argon2_hash;Module["argon2ErrorMessage"]=_argon2_error_message;/' ./generated/argon2.js
-ed -s ./generated/argon2.js <<< $'-5,$d\nwq'
 
 # print "\nEncoding binary WASM file to Base64 string..."
 
